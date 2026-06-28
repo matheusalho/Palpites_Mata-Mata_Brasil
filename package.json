@@ -1,0 +1,20 @@
+{
+  "name": "bolao-balera-2026-palpites-mata-mata",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Página de palpites do Bolão Balera 2026 — fase de Mata-Mata",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^5.4.11"
+  }
+}

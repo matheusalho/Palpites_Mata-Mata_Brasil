@@ -1,0 +1,9 @@
+node_modules
+dist
+.vite
+*.local
+.env
+.DS_Store
+
+# Réplica da página original (referência interna; contém o site/endpoint da fase de grupos)
+referencia_original/

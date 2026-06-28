@@ -1,0 +1,68 @@
+{
+  "_descricao": "(VERSÃO BRASIL — só jogos do Brasil) Fonte de dados compartilhada do Bolão Balera 2026 - Mata-Mata. Rodada de 32 (16-avos) OFICIAL E COMPLETA — todos os 16 confrontos confirmados (fonte: ge.globo, 28/06/2026), com data/hora (Brasília). Os 12 grupos encerraram; 8 melhores 3ºs: grupos B, D, E, F, I, J, K, L. Para avançar de fase (Oitavas etc.), edite este arquivo com os novos confrontos (incluindo dataHora) e rode regenerar.py.",
+  "_geradoEm": "2026-06-28T02:30-03:00",
+  "fases": [
+    "Rodada de 32",
+    "Oitavas",
+    "Quartas",
+    "Semifinal",
+    "Final"
+  ],
+  "faseAtual": "Rodada de 32",
+  "jogos": [
+    {
+      "id": 76,
+      "fase": "Rodada de 32",
+      "mandante": "Brasil",
+      "visitante": "Japão",
+      "slot": "1C x 2F",
+      "dataHora": "29/06 - 14:00",
+      "brasil": true,
+      "provisorio": false
+    }
+  ],
+  "classificados": {
+    "primeiros": [
+      "México",
+      "Suíça",
+      "Brasil",
+      "Estados Unidos",
+      "Alemanha",
+      "Holanda",
+      "Bélgica",
+      "Espanha",
+      "França",
+      "Argentina",
+      "Colômbia",
+      "Inglaterra"
+    ],
+    "segundos": [
+      "África do Sul",
+      "Canadá",
+      "Marrocos",
+      "Austrália",
+      "Costa do Marfim",
+      "Japão",
+      "Egito",
+      "Cabo Verde",
+      "Noruega",
+      "Áustria",
+      "Portugal",
+      "Croácia"
+    ],
+    "terceiros": [
+      "Paraguai",
+      "Suécia",
+      "Equador",
+      "RD Congo",
+      "Bósnia e Herzegovina",
+      "Senegal",
+      "Argélia",
+      "Gana"
+    ],
+    "alternativos_3o": [
+      "Irã",
+      "Coreia do Sul"
+    ]
+  }
+}
