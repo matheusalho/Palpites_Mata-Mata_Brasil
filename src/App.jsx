@@ -135,13 +135,14 @@ export default function App() {
   )
   const totalGames = form.predictions.length
   const pct = Math.round((filledCount / totalGames) * 100)
+  const single = totalGames === 1
 
   // ---------- validação ----------
   const validate = () => {
     const errors = []
     if (!form.player.trim()) errors.push('Informe o nome do participante.')
     if (onlyDigits(form.cpf).length !== 11) errors.push('Informe um CPF válido (11 dígitos).')
-    if (filledCount < totalGames) errors.push(`Preencha o placar de todos os ${totalGames} jogos (${filledCount}/${totalGames}).`)
+    if (filledCount < totalGames) errors.push(totalGames === 1 ? 'Preencha o placar do jogo.' : `Preencha o placar de todos os ${totalGames} jogos (${filledCount}/${totalGames}).`)
     // Brasil: artilheiros obrigatórios
     for (const p of form.predictions) {
       if (p.brasilHome && p.homeScore !== '' && parseInt(p.homeScore, 10) > 0) {
@@ -242,9 +243,9 @@ export default function App() {
         <img className="hero-image" src={heroImg} alt="" />
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p>Bolão do Escritório · Jogos do Brasil</p>
+          <p>Bolão do Escritório · {single ? 'Jogo do Brasil' : 'Jogos do Brasil'}</p>
           <h1>BALERA Copa 2026</h1>
-          <span>Jogos do Brasil · {totalGames} jogo{totalGames !== 1 ? 's' : ''} · placar + artilheiros</span>
+          <span className="hero-tag"><BrasilFlag />{single ? 'Jogo do Brasil' : `${totalGames} jogos do Brasil`} · placar + artilheiros</span>
         </div>
       </header>
 
@@ -252,7 +253,7 @@ export default function App() {
         <div className="sheet-toolbar">
           <div>
             <p className="kicker">{chaveamento.faseAtual}</p>
-            <h2 id="sheet-title">Meus palpites</h2>
+            <h2 id="sheet-title">{single ? 'Meu palpite' : 'Meus palpites'}</h2>
           </div>
           <div className="toolbar-actions">
             <button type="button" className="random-button" onClick={fillRandom} disabled={sending}>
@@ -286,7 +287,7 @@ export default function App() {
           </label>
           <div className="progress-card">
             <strong>{filledCount}/{totalGames}</strong>
-            <span>jogos com placar preenchido</span>
+            <span>{single ? 'jogo com placar preenchido' : 'jogos com placar preenchido'}</span>
             <div className="progress-track" aria-label={`${pct}% preenchido`}>
               <span style={{ width: `${pct}%` }} />
             </div>
@@ -295,7 +296,9 @@ export default function App() {
 
         <div className="legend">
           <span><i style={{ background: '#ffeb00' }} /> Jogo do Brasil — artilheiros obrigatórios</span>
-          <span><i style={{ background: '#ffe4e6' }} /> Confronto provisório (depende dos últimos jogos dos grupos)</span>
+          {form.predictions.some((p) => p.provisorio) && (
+            <span><i style={{ background: '#ffe4e6' }} /> Confronto provisório (depende dos últimos jogos dos grupos)</span>
+          )}
           <span>Demais times: artilheiros opcionais (mas pontuam se acertar).</span>
         </div>
 
@@ -317,7 +320,7 @@ export default function App() {
             {ENDPOINT_PALPITES ? 'Confira tudo antes de enviar — não dá para alterar depois.' : 'Modo demonstração (endpoint não configurado).'}
           </span>
           <button type="button" className="save-button" onClick={onTrySend} disabled={sending}>
-            {sending ? 'Enviando...' : 'Enviar palpites'}
+            {sending ? 'Enviando...' : (single ? 'Enviar palpite' : 'Enviar palpites')}
           </button>
         </div>
       </section>
@@ -352,6 +355,18 @@ export default function App() {
   )
 }
 
+// ---------- bandeira do Brasil (SVG inline; consistente em qualquer sistema) ----------
+function BrasilFlag() {
+  return (
+    <svg viewBox="0 0 28 20" aria-hidden="true"
+      style={{ height: '0.85em', width: 'auto', verticalAlign: '-2px', borderRadius: 2, boxShadow: '0 0 0 1.5px rgba(255,255,255,.85)', marginRight: 6 }}>
+      <rect width="28" height="20" fill="#009c3b" />
+      <path d="M14 2 L26 10 L14 18 L2 10 Z" fill="#ffdf00" />
+      <circle cx="14" cy="10" r="4.2" fill="#002776" />
+    </svg>
+  )
+}
+
 // ---------- cartão de jogo ----------
 function MatchCard({ p, updateScore, setScorer, showErrors }) {
   const nH = p.homeScore === '' ? 0 : parseInt(p.homeScore, 10)
@@ -361,10 +376,10 @@ function MatchCard({ p, updateScore, setScorer, showErrors }) {
 
   return (
     <div className={`match-card${p.brasilHome || p.brasilAway ? ' is-brasil' : ''}`}>
+      {(p.brasilHome || p.brasilAway) && <div className="brasil-banner"><BrasilFlag /> Jogo do Brasil</div>}
       <div className="match-top">
         <span className="match-num">J{p.id}</span>
         <span style={{ display: 'flex', gap: 6 }}>
-          {(p.brasilHome || p.brasilAway) && <span className="tag-brasil">Brasil</span>}
           {p.provisorio && <span className="tag-prov">provisório</span>}
         </span>
       </div>
