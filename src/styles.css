@@ -1,6 +1,16 @@
 /* ===== Base: estilos originais do site bolao.balera.com.br (reaproveitados) ===== */
 :root{color:#000;font-synthesis:none;text-rendering:optimizelegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#f6f8fb;font-family:'Segoe UI',Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,sans-serif}
 *{box-sizing:border-box}
+.closed-page{min-height:100svh;display:grid;place-items:center;padding:24px;background:linear-gradient(#0098451f,#0000 320px),linear-gradient(#00b4ff1c,#0000 420px),#eef3f7}
+.closed-card{background:#fff;border:1px solid #00000018;border-top:6px solid #009c3b;border-radius:16px;max-width:560px;width:100%;padding:44px 28px;text-align:center;box-shadow:0 22px 70px #00000022}
+.closed-flag{display:flex;justify-content:center;margin-bottom:16px}
+.closed-flag svg{height:56px!important;width:auto!important;border-radius:5px;box-shadow:0 0 0 1.5px #00000022}
+.closed-kicker{margin:0 0 8px;color:#00b4ff;text-transform:uppercase;letter-spacing:.04em;font-size:.78rem;font-weight:900}
+.closed-card h1{margin:0 0 12px;font-size:clamp(1.9rem,5vw,2.7rem);color:#0a3d1f;text-transform:uppercase;letter-spacing:-.01em;line-height:1.05}
+.closed-sub{margin:0 0 16px;color:#26313d;font-size:1.02rem;font-weight:700;line-height:1.45}
+.closed-luck{margin:0 0 26px;color:#0a7a34;font-size:1.12rem;font-weight:900}
+.closed-link{display:inline-block;background:#009c3b;color:#fff;text-decoration:none;font-weight:900;border-radius:999px;padding:13px 28px}
+.closed-link:hover{background:#ffeb00;color:#000}
 html{scroll-behavior:smooth}
 body{min-width:320px;margin:0}
 button,a{font:inherit}

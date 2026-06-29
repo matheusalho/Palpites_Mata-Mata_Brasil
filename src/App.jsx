@@ -6,6 +6,10 @@ import { ENDPOINT_PALPITES, STORAGE_KEY } from './config.js'
 
 const GOL_CONTRA = '(gol contra)'
 
+// Encerramento do envio de palpites: 29/06/2026 13:50 (horário de Brasília, UTC-3).
+const DEADLINE = new Date('2026-06-29T13:50:00-03:00')
+const isClosed = () => Date.now() >= DEADLINE.getTime()
+
 // ---------- helpers de dados ----------
 const playersOf = (team) => (elencos[team] || []).map((p) => p.name)
 const scorerOptions = (team) => [...playersOf(team), GOL_CONTRA]
@@ -77,6 +81,17 @@ export default function App() {
   const [result, setResult] = useState(null) // {type, title, message}
   const [sending, setSending] = useState(false)
   const [showErrors, setShowErrors] = useState(false)
+  const [closed, setClosed] = useState(isClosed)
+
+  // vira para "encerrado" exatamente no horário limite (e re-checa periodicamente)
+  useEffect(() => {
+    if (closed) return
+    const tick = () => { if (isClosed()) setClosed(true) }
+    const ms = DEADLINE.getTime() - Date.now()
+    const t = ms > 0 && ms < 2147483647 ? setTimeout(tick, ms + 400) : null
+    const iv = setInterval(tick, 15000)
+    return () => { if (t) clearTimeout(t); clearInterval(iv) }
+  }, [closed])
 
   // salva rascunho local a cada mudança
   useEffect(() => {
@@ -156,6 +171,7 @@ export default function App() {
   }
 
   const onTrySend = () => {
+    if (isClosed()) { setClosed(true); return }
     const errors = validate()
     if (errors.length) {
       setShowErrors(true)
@@ -236,6 +252,21 @@ export default function App() {
     }
     return [...m.entries()]
   }, [form.predictions])
+
+  if (closed) {
+    return (
+      <div className="page closed-page">
+        <div className="closed-card">
+          <div className="closed-flag"><BrasilFlag /></div>
+          <p className="closed-kicker">Bolão Balera · Jogo do Brasil</p>
+          <h1>Palpites encerrados</h1>
+          <p className="closed-sub">O período de envio de palpites para o jogo do Brasil foi encerrado.</p>
+          <p className="closed-luck">Boa sorte a todos que enviaram seus palpites! 🇧🇷⚽</p>
+          <a className="closed-link" href="https://bolao-balera-geral.onrender.com">Acompanhar o ranking</a>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="page">
