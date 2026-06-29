@@ -27,6 +27,7 @@ jobs:
       - name: Build
         env:
           VITE_ENDPOINT_PALPITES: ${{ secrets.VITE_ENDPOINT_PALPITES }}
+          VITE_BASE: /Palpites_Mata-Mata_Brasil/
         run: npm run build
       - uses: actions/configure-pages@v5
         with:

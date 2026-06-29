@@ -1,0 +1,18 @@
+# Render Blueprint — Palpites · Jogos do Brasil (app Vite/React, com build)
+# Render ▸ New ▸ Blueprint ▸ conectar este repositório ▸ Apply.
+# Depois, em Environment, defina o valor do secret VITE_ENDPOINT_PALPITES
+# (a URL do fluxo de gravação do Power Automate).
+services:
+  - type: web
+    name: bolao-balera-palpites-brasil
+    runtime: static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    # Site na raiz do subdomínio Render -> base '/' (VITE_BASE não é definido aqui).
+    envVars:
+      - key: VITE_ENDPOINT_PALPITES
+        sync: false   # defina o valor (secreto) no painel do Render
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

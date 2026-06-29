@@ -1,5 +1,5 @@
 {
-  "_descricao": "(VERSÃO BRASIL — só jogos do Brasil) Fonte de dados compartilhada do Bolão Balera 2026 - Mata-Mata. Rodada de 32 (16-avos) OFICIAL E COMPLETA — todos os 16 confrontos confirmados (fonte: ge.globo, 28/06/2026), com data/hora (Brasília). Os 12 grupos encerraram; 8 melhores 3ºs: grupos B, D, E, F, I, J, K, L. Para avançar de fase (Oitavas etc.), edite este arquivo com os novos confrontos (incluindo dataHora) e rode regenerar.py.",
+  "_descricao": "(VERSAO BRASIL — so jogos do Brasil) Fonte de dados compartilhada do Bolão Balera 2026 - Mata-Mata. Rodada de 32 (16-avos) OFICIAL E COMPLETA — todos os 16 confrontos confirmados (fonte: ge.globo, 28/06/2026), com data/hora (Brasília). Os 12 grupos encerraram; 8 melhores 3ºs: grupos B, D, E, F, I, J, K, L. Para avançar de fase (Oitavas etc.), edite este arquivo com os novos confrontos (incluindo dataHora) e rode regenerar.py.",
   "_geradoEm": "2026-06-28T02:30-03:00",
   "fases": [
     "Rodada de 32",
