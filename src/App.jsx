@@ -244,7 +244,7 @@ export default function App() {
         <div className="hero-shade" />
         <div className="hero-copy">
           <p>Bolão do Escritório · {single ? 'Jogo do Brasil' : 'Jogos do Brasil'}</p>
-          <h1>BALERA Copa 2026</h1>
+          <h1>Bolão Balera<small className="hero-line2">Copa do Mundo FIFA 2026</small></h1>
           <span className="hero-tag"><BrasilFlag />{single ? 'Jogo do Brasil' : `${totalGames} jogos do Brasil`} · placar + artilheiros</span>
         </div>
       </header>
