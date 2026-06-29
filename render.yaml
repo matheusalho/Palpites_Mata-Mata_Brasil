@@ -4,7 +4,7 @@
 # (a URL do fluxo de gravação do Power Automate).
 services:
   - type: web
-    name: bolao-balera-palpites-brasil
+    name: bolao-balera
     runtime: static
     buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
