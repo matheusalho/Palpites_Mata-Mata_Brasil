@@ -8,8 +8,10 @@
 .closed-kicker{margin:0 0 8px;color:#00b4ff;text-transform:uppercase;letter-spacing:.04em;font-size:.78rem;font-weight:900}
 .closed-card h1{margin:0 0 12px;font-size:clamp(1.9rem,5vw,2.7rem);color:#0a3d1f;text-transform:uppercase;letter-spacing:-.01em;line-height:1.05}
 .closed-sub{margin:0 0 16px;color:#26313d;font-size:1.02rem;font-weight:700;line-height:1.45}
-.closed-luck{margin:0 0 26px;color:#0a7a34;font-size:1.12rem;font-weight:900}
-.closed-link{display:inline-block;background:#009c3b;color:#fff;text-decoration:none;font-weight:900;border-radius:999px;padding:13px 28px}
+.closed-luck{margin:0 0 20px;color:#0a7a34;font-size:1.12rem;font-weight:900}
+.closed-cta{background:linear-gradient(#0098450f,#0000);border:1px solid #00963b2b;border-radius:14px;padding:18px 16px}
+.closed-cta-txt{margin:0 0 14px;color:#0a3d1f;font-size:1rem;font-weight:800;line-height:1.45}
+.closed-link{display:inline-block;background:#009c3b;color:#fff;text-decoration:none;font-weight:900;font-size:1.05rem;border-radius:999px;padding:14px 30px;box-shadow:0 10px 24px #009c3b44}
 .closed-link:hover{background:#ffeb00;color:#000}
 html{scroll-behavior:smooth}
 body{min-width:320px;margin:0}

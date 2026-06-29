@@ -262,7 +262,10 @@ export default function App() {
           <h1>Palpites encerrados</h1>
           <p className="closed-sub">O período de envio de palpites para o jogo do Brasil foi encerrado.</p>
           <p className="closed-luck">Boa sorte a todos que enviaram seus palpites! 🇧🇷⚽</p>
-          <a className="closed-link" href="https://bolao-balera-geral.onrender.com">Acompanhar o ranking</a>
+          <div className="closed-cta">
+            <p className="closed-cta-txt">Acompanhe o <b>ranking em tempo real</b> e veja os palpites dos seus colegas! 📊</p>
+            <a className="closed-link" href="https://bolao-balera-geral.onrender.com/">Acompanhar o Ranking ao vivo →</a>
+          </div>
         </div>
       </div>
     )
