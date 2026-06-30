@@ -1,6 +1,6 @@
 {
-  "_descricao": "(VERSAO BRASIL — so jogos do Brasil) Fonte de dados compartilhada do Bolão Balera 2026 - Mata-Mata. Rodada de 32 (16-avos) OFICIAL E COMPLETA — todos os 16 confrontos confirmados (fonte: ge.globo, 28/06/2026), com data/hora (Brasília). Os 12 grupos encerraram; 8 melhores 3ºs: grupos B, D, E, F, I, J, K, L. Para avançar de fase (Oitavas etc.), edite este arquivo com os novos confrontos (incluindo dataHora) e rode regenerar.py.",
-  "_geradoEm": "2026-06-28T02:30-03:00",
+  "_descricao": "(VERSAO BRASIL — so jogos do Brasil) Fonte de dados compartilhada do Bolão Balera 2026 - Mata-Mata. OITAVAS DE FINAL — jogo do Brasil (Brasil x Noruega, 05/07/2026 17:00 BRT). Bolão reiniciado para esta fase (começar do zero). Para avançar de fase, edite os confrontos (incluindo dataHora) e rode regenerar.py.",
+  "_geradoEm": "2026-06-29T14:30-03:00",
   "fases": [
     "Rodada de 32",
     "Oitavas",
@@ -8,15 +8,15 @@
     "Semifinal",
     "Final"
   ],
-  "faseAtual": "Rodada de 32",
+  "faseAtual": "Oitavas",
   "jogos": [
     {
-      "id": 76,
-      "fase": "Rodada de 32",
+      "id": 93,
+      "fase": "Oitavas",
       "mandante": "Brasil",
-      "visitante": "Japão",
-      "slot": "1C x 2F",
-      "dataHora": "29/06 - 14:00",
+      "visitante": "Noruega",
+      "slot": "Oitavas de Final",
+      "dataHora": "05/07 - 17:00",
       "brasil": true,
       "provisorio": false
     }

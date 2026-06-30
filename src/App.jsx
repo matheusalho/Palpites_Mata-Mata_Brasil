@@ -6,8 +6,8 @@ import { ENDPOINT_PALPITES, STORAGE_KEY } from './config.js'
 
 const GOL_CONTRA = '(gol contra)'
 
-// Encerramento do envio de palpites: 29/06/2026 13:50 (horário de Brasília, UTC-3).
-const DEADLINE = new Date('2026-06-29T13:50:00-03:00')
+// Encerramento do envio de palpites: 05/07/2026 17:00 (horário de Brasília, UTC-3) — Oitavas, Brasil x Noruega.
+const DEADLINE = new Date('2026-07-05T17:00:00-03:00')
 const isClosed = () => Date.now() >= DEADLINE.getTime()
 
 // ---------- helpers de dados ----------
